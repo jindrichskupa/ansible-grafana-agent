@@ -16,4 +16,5 @@
 - name: Create "grafana-agent" configuration file
   template:
     src: "grafana-agent.yml.j2"
-    dest: "/etc/grafana-agent/grafana-agent.yml"
+    dest: "/etc/grafana-agent.yml"
+
