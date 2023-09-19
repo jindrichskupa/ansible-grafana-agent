@@ -1,2 +1,5 @@
 ---
-# handlers file for grafana-agent
+- name: restart grafana-agent
+  service:
+    name: "grafana-agent"
+    state: restarted
