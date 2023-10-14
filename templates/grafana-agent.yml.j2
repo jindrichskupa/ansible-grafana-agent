@@ -43,7 +43,7 @@ logs:
                 attrs: attrs
                 tag: attrs.tag
           - regex:
-              expression: (?P<image_name>(?:[^|]*[^|])).(?P<container_name>(?:[^|]*[^|])).(?P<image_id>(?:[^|]*[^|])).(?P<container_id>(?:[^|]*[^|]))
+              expression: (?P<image_name>(?:[^|]*[^|])).(?P<container_name>(?:[^|]*[^|])).(?P<image_id>(?:[^|]*[^|])).(?P<container_id>(?:[^|]*[^|])).(?P<scope>(?:[^|]*[^|]))
               source: "tag"
           - labels:
               tag:
