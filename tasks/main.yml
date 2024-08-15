@@ -24,3 +24,11 @@
     src: "{{ default_template | default('grafana-agent.j2', true) }}"
     dest: "/etc/default/grafana-agent"
   notify: restart grafana-agent
+
+- name: Enable service grafana-agent
+  systemd_service:
+    name: grafana-agent
+    enabled: true
+    state: started
+    masked: no
+
