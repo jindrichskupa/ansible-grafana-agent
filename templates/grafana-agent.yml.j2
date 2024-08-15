@@ -4,6 +4,8 @@ server:
 metrics:
   global:
     scrape_interval: 1m
+    external_labels:
+      server: '{{ inventory_hostname }}'
     remote_write:
       - url: {{ prometheus_url }}
 
@@ -65,3 +67,5 @@ logs:
     clients:
       - url: {{ loki_url }}
         tenant_id: default
+        external_labels:
+          server: '{{ inventory_hostname }}'
