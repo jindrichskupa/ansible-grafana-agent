@@ -8,6 +8,13 @@ metrics:
       server: '{{ inventory_hostname }}'
     remote_write:
       - url: {{ prometheus_url }}
+        write_relabel_configs:
+          - source_labels:
+              - "__name__"
+            regex: ".*"
+            action: "keep"
+          - regex: ".*"
+            action: "labelkeep"
 
 integrations:
   agent:
