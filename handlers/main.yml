@@ -2,4 +2,5 @@
 - name: restart grafana-agent
   service:
     name: "grafana-agent"
+    enabled: true
     state: restarted
