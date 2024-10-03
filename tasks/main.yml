@@ -15,13 +15,13 @@
 
 - name: Create "grafana-agent" configuration file
   template:
-    src: "{{ config_template | default('grafana-agent.yml.j2', true) }}"
+    src: "{{ grafana_agent_config_template | default('grafana-agent.yml.j2', true) }}"
     dest: "/etc/grafana-agent.yaml"
   notify: restart grafana-agent
 
 - name: Create "grafana-agent" default file
   template:
-    src: "{{ default_template | default('grafana-agent.j2', true) }}"
+    src: "{{ grafana_agent_default_template | default('grafana-agent.j2', true) }}"
     dest: "/etc/default/grafana-agent"
   notify: restart grafana-agent
 
