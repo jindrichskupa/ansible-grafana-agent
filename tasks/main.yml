@@ -25,3 +25,9 @@
     dest: "/etc/default/grafana-agent"
   notify: restart grafana-agent
 
+- name: Add user grafana-agent to docker group
+  user:
+    name: grafana-agent
+    groups: docker
+    append: yes
+  notify: restart grafana-agent
