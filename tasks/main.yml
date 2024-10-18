@@ -28,6 +28,7 @@
 - name: Add user grafana-agent to docker group
   user:
     name: grafana-agent
-    groups: docker
+    groups:
+      - docker
     append: yes
   notify: restart grafana-agent
